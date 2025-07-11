@@ -1,553 +1,555 @@
-<head>
-  <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHLS22RKNY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<html>
+  <head>
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHLS22RKNY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-LHLS22RKNY');
-  </script>
+      gtag('config', 'G-LHLS22RKNY');
+    </script>
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6399393872087612"
-      crossorigin="anonymous"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6399393872087612"
+        crossorigin="anonymous"></script>
 
-  <meta name="google-adsense-account" content="ca-pub-6399393872087612">
+    <meta name="google-adsense-account" content="ca-pub-6399393872087612">
 
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-    
-    /* container for both menu and start button */
-    #menu-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 200px;
-      font-family: sans-serif;
-      z-index: 1;
-    }
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      /* container for both menu and start button */
+      #menu-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 200px;
+        font-family: sans-serif;
+        z-index: 1;
+      }
 
-    /* the translucent “box” */
-    #overlay {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(5px);
-      padding: 16px;
-      border-radius: 8px;
-    }
-    #overlay h2 {
-      margin-top: 0;
-      font-size: 18px;
-      text-align: center;
-    }
-    #overlay .section-label {
-      margin: 8px 0 4px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #555;
-    }
-    #overlay button {
-      display: block;
-      width: 100%;
-      margin: 6px 0;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background: #f0f0f0;
-      color: #333;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-    #overlay button:hover:not(:disabled) {
-      border-color: white;
-    }
-    #overlay button.selected {
-      background: #4285f4;
-      color: white;
-      border-color: #4285f4;
-    }
-    #overlay hr {
-      margin: 12px 0;
-      border: none;
-      border-top: 1px solid #aaa;
-    }
+      /* the translucent “box” */
+      #overlay {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(5px);
+        padding: 16px;
+        border-radius: 8px;
+      }
+      #overlay h2 {
+        margin-top: 0;
+        font-size: 18px;
+        text-align: center;
+      }
+      #overlay .section-label {
+        margin: 8px 0 4px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #555;
+      }
+      #overlay button {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #f0f0f0;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+      #overlay button:hover:not(:disabled) {
+        border-color: white;
+      }
+      #overlay button.selected {
+        background: #4285f4;
+        color: white;
+        border-color: #4285f4;
+      }
+      #overlay hr {
+        margin: 12px 0;
+        border: none;
+        border-top: 1px solid #aaa;
+      }
 
-    /* horizontal group for count buttons */
-    #count-buttons {
-      display: flex;
-      margin-top: 12px;
-    }
-    #count-buttons button {
-      flex: 1;
-      margin: 0;
-      border-radius: 0;
-      border-right: none;
-      text-align: center;
-      padding: 8px;
-    }
-    #count-buttons button:first-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-    }
-    #count-buttons button:last-child {
-      border-right: 1px solid #ccc;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-    }
-    #count-buttons button.selected {
-      background: #4285f4;
-      color: white;
-      border-color: #4285f4;
-    }
+      /* horizontal group for count buttons */
+      #count-buttons {
+        display: flex;
+        margin-top: 12px;
+      }
+      #count-buttons button {
+        flex: 1;
+        margin: 0;
+        border-radius: 0;
+        border-right: none;
+        text-align: center;
+        padding: 8px;
+      }
+      #count-buttons button:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      #count-buttons button:last-child {
+        border-right: 1px solid #ccc;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      #count-buttons button.selected {
+        background: #4285f4;
+        color: white;
+        border-color: #4285f4;
+      }
 
-    /* Start quiz button below the box */
-    #start-btn {
-      width: 100%;
-      margin-top: 12px;
-      padding: 10px;
-      background: #28a745;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: not-allowed;
-      opacity: 0.6;
-      transition: opacity 0.2s;
-    }
-    #start-btn.enabled {
-      cursor: pointer;
-      opacity: 1;
-    }
-    #start-btn:disabled {
-      pointer-events: none;
-    }
+      /* Start quiz button below the box */
+      #start-btn {
+        width: 100%;
+        margin-top: 12px;
+        padding: 10px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: not-allowed;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      #start-btn.enabled {
+        cursor: pointer;
+        opacity: 1;
+      }
+      #start-btn:disabled {
+        pointer-events: none;
+      }
 
-    /* New game button - same styling as start button */
-    #new-game-btn {
-      width: 100%;
-      margin-top: 12px;
-      padding: 10px;
-      background: #28a745;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      opacity: 1;
-      transition: opacity 0.2s;
-      display: none; /* Hide the button to start with */
-    }
+      /* New game button - same styling as start button */
+      #new-game-btn {
+        width: 100%;
+        margin-top: 12px;
+        padding: 10px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.2s;
+        display: none; /* Hide the button to start with */
+      }
 
-    /* Progress bar */
-    .progress-container {
-      width: 100%;
-      height: 8px;
-      background: #eee;
-      border-radius: 4px;
-      overflow: hidden;
-      margin: 8px 0;
-    }
+      /* Progress bar */
+      .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 8px 0;
+      }
 
-    #progress-bar {
-      width: 0%;
-      height: 100%;
-      background: #28a745;
-      transition: width 0.3s ease;
-    }
+      #progress-bar {
+        width: 0%;
+        height: 100%;
+        background: #28a745;
+        transition: width 0.3s ease;
+      }
 
-    /* Skip button */
-    #skip-btn {
-      width: 100%;
-      margin-top: 12px;
-      padding: 10px;
-      background: #ffc107;        /* amber */
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    #skip-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+      /* Skip button */
+      #skip-btn {
+        width: 100%;
+        margin-top: 12px;
+        padding: 10px;
+        background: #ffc107;        /* amber */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      #skip-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
 
-    /* the globe container */
-    #globeViz {
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; bottom: 0;
-    }
-  </style>
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
-</head>
+      /* the globe container */
+      #globeViz {
+        position: absolute;
+        top: 0; left: 0;
+        right: 0; bottom: 0;
+      }
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+  </head>
 
-<body>
-  <div id="menu-container">
-    <div id="overlay">
-      <h2>Pick regions to guess countries in</h2>
+  <body>
+    <div id="menu-container">
+      <div id="overlay">
+        <h2>Pick regions to guess countries in</h2>
 
-      <p class="section-label">Select regions:</p>
-      <button data-continent="Africa">Africa</button>
-      <button data-continent="Asia">Asia</button>
-      <button data-continent="Europe">Europe</button>
-      <button data-continent="North America">North America</button>
-      <button data-continent="Oceania">Oceania</button>
-      <button data-continent="South America">South America</button>
-      <hr/>
-      <button data-continent="World">World</button>
+        <p class="section-label">Select regions:</p>
+        <button data-continent="Africa">Africa</button>
+        <button data-continent="Asia">Asia</button>
+        <button data-continent="Europe">Europe</button>
+        <button data-continent="North America">North America</button>
+        <button data-continent="Oceania">Oceania</button>
+        <button data-continent="South America">South America</button>
+        <hr/>
+        <button data-continent="World">World</button>
 
-      <p class="section-label">Maximum countries:</p>
-      <div id="count-buttons">
-        <button data-count="10" class="selected">10</button>
-        <button data-count="20">20</button>
-        <button data-count="30">30</button>
-        <button data-count="40">40</button>
-        <button data-count="All">All</button>
+        <p class="section-label">Maximum countries:</p>
+        <div id="count-buttons">
+          <button data-count="10" class="selected">10</button>
+          <button data-count="20">20</button>
+          <button data-count="30">30</button>
+          <button data-count="40">40</button>
+          <button data-count="All">All</button>
+        </div>
       </div>
+
+      <button id="start-btn" disabled>Start quiz</button>
+      
     </div>
 
-    <button id="start-btn" disabled>Start quiz</button>
-    
-  </div>
+    <!-- question overlay, hidden by default -->
+    <div id="questions-overlay" style="display: none; position: absolute; top: 20px; left: 20px; width: 200px; padding: 16px; background: rgba(255,255,255,0.85); border-radius: 8px; font-family: sans-serif; z-index: 2;">
+      <h2>Click on:</h2>
+      <p id="country-name" style="font-size: 20px; text-align: center; margin: 12px 0;"></p>
 
-  <!-- question overlay, hidden by default -->
-  <div id="questions-overlay" style="display: none; position: absolute; top: 20px; left: 20px; width: 200px; padding: 16px; background: rgba(255,255,255,0.85); border-radius: 8px; font-family: sans-serif; z-index: 2;">
-    <h2>Click on:</h2>
-    <p id="country-name" style="font-size: 20px; text-align: center; margin: 12px 0;"></p>
+      <!-- stats container -->
+      <div id="stats" style="display: none; margin-top: 12px; font-size: 14px; line-height: 1.4;">
+        <!-- we’ll fill this in with JS once the quiz is done -->
+      </div>
 
-    <!-- stats container -->
-    <div id="stats" style="display: none; margin-top: 12px; font-size: 14px; line-height: 1.4;">
-      <!-- we’ll fill this in with JS once the quiz is done -->
+      <!-- progress bar -->
+      <div class="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
+      <!-- skip button -->
+      <button id="skip-btn" style="display: none;">
+        Skip this question
+      </button>
+      
+      <!-- New game button that appears after quiz completion -->
+      <button id="new-game-btn">New game</button>
     </div>
 
-    <!-- progress bar -->
-    <div class="progress-container">
-      <div id="progress-bar"></div>
-    </div>
+    <div id="globeViz"></div>
 
-    <!-- skip button -->
-    <button id="skip-btn" style="display: none;">
-      Skip this question
-    </button>
-    
-     <!-- New game button that appears after quiz completion -->
-    <button id="new-game-btn">New game</button>
-  </div>
+  <script type="module">
+    import { scaleSequentialSqrt } from 'https://esm.sh/d3-scale';
+    import { interpolateYlOrRd } from 'https://esm.sh/d3-scale-chromatic';
 
-  <div id="globeViz"></div>
+    let allFeatures = [];
+    let maxCount = 10;  // default quiz size
+    let quizCountries = [];
+    let correctSet    = new Set();   // ← track the green ones
+    let wrongSet      = new Set();   // ← track the reds (reset each question)
+    let currentQuestionIndex = 0;
+    let hoveredFeature = null;
+    let errorCount = 0;
+    let skipCount  = 0;
 
-<script type="module">
-  import { scaleSequentialSqrt } from 'https://esm.sh/d3-scale';
-  import { interpolateYlOrRd } from 'https://esm.sh/d3-scale-chromatic';
-
-  let allFeatures = [];
-  let maxCount = 10;  // default quiz size
-  let quizCountries = [];
-  let correctSet    = new Set();   // ← track the green ones
-  let wrongSet      = new Set();   // ← track the reds (reset each question)
-  let currentQuestionIndex = 0;
-  let hoveredFeature = null;
-  let errorCount = 0;
-  let skipCount  = 0;
-
-  // 1) create globe with NO polygons initially
-  const world = new Globe(document.getElementById('globeViz'))
-    .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
-    .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
-    .lineHoverPrecision(0)
-    .polygonsData([])
-    .polygonAltitude(0.01)
-    .polygonCapColor(() => 'lightgray')
-    .polygonSideColor(() => 'rgba(0, 100, 0, 0.15)')
-    .polygonStrokeColor(() => 'black')
-    .polygonsTransitionDuration(300)
-    .onPolygonHover(f => {
-      hoveredFeature = f;
-      world.polygonAltitude(d => d === hoveredFeature ? 0.03 : 0.01); // Bump the altitude
-      updateColors();
-    });
-
-    /*
-    .onPolygonHover(hoverD => world
-      .polygonAltitude(d => d === hoverD ? 0.03 : 0.01)
-      .polygonCapColor(d => d === hoverD ? 'steelblue' : 'lightgray')
-    )*/
-    //.onPolygonClick(f => console.log('You clicked on:', f.properties.ADMIN));
-
-    function finishGame() {
-      // Set progress bar to 100%
-      document.getElementById('progress-bar').style.width = '100%';
-      statsDiv.innerHTML = `
-        <p>Correct: ${correctSet.size} / ${quizCountries.length}</p>
-        <p>Errors: ${errorCount}</p>
-        <p>Skipped: ${skipCount}</p>
-      `;
-      statsDiv.style.display = 'block';
-
-      countryNameEl.textContent = '🎉 Quiz complete!'; 
-      skipBtn.style.display = 'none';
-      newGameBtn.style.display = 'block';
-    }
-
-    world.onPolygonClick(feat => {
-      console.log('You clicked on:', feat.properties.ADMIN)
-      const target = quizCountries[currentQuestionIndex];
-      // correct!
-      if (feat.properties.ADMIN === target.properties.ADMIN) {
-        correctSet.add(feat);
+    // 1) create globe with NO polygons initially
+    const world = new Globe(document.getElementById('globeViz'))
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
+      .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
+      .lineHoverPrecision(0)
+      .polygonsData([])
+      .polygonAltitude(0.01)
+      .polygonCapColor(() => 'lightgray')
+      .polygonSideColor(() => 'rgba(0, 100, 0, 0.15)')
+      .polygonStrokeColor(() => 'black')
+      .polygonsTransitionDuration(300)
+      .onPolygonHover(f => {
+        hoveredFeature = f;
+        world.polygonAltitude(d => d === hoveredFeature ? 0.03 : 0.01); // Bump the altitude
         updateColors();
-
-        // prepare next question
-        currentQuestionIndex++;
-        wrongSet.clear();    // wipe out the red marks
-        updateColors();      // repaint the map
-
-        if (currentQuestionIndex < quizCountries.length) {
-          showQuestion();
-        } else {
-          finishGame()
-          /*
-          // Set progress bar to 100%
-          document.getElementById('progress-bar').style.width = '100%';
-    
-          countryNameEl.textContent = '🎉 Quiz complete!'; 
-          skipBtn.style.display = 'none';
-          newGameBtn.style.display = 'block';
-          // optionally disable clicks or reset
-          */
-        }
-        
-      // wrong
-      } else {
-        wrongSet.add(feat);
-        errorCount++;
-        updateColors();
-      }
-    });
-  
-  // Resize the globe when adjusting browser window size
-  window.addEventListener('resize', () => {
-    const width  = window.innerWidth;
-    const height = window.innerHeight;
-
-    // update the WebGL renderer’s drawing buffer
-    world.renderer().setSize(width, height);
-
-    // update the camera’s aspect ratio & projection matrix
-    world.camera().aspect = width / height;
-    world.camera().updateProjectionMatrix();
-  });
-
-  function updateColors() {
-    world
-      .polygonCapColor(d => {
-        if (correctSet.has(d))       return 'green';
-        if (wrongSet.has(d))         return 'red';
-        if (d === hoveredFeature) return 'steelblue';
-        return 'lightgray';
-      })
-      .polygonSideColor(d => {
-        if (correctSet.has(d))     return 'green';
-        if (wrongSet.has(d))       return 'red';
-        if (d === hoveredFeature) return 'steelblue';
-        return 'rgba(0,100,0,0.15)';
       });
-  }
 
-  // 2) load GeoJSON
-  fetch('datasets/ne_110m_admin_0_countries.geojson')
-    .then(r => r.json())
-    .then(({ features }) => {
-      allFeatures = features;
-      //allFeatures = features.filter(d => d.properties.ISO_A2 !== 'AQ'); // Include to remove Antarctica
-    });
+      /*
+      .onPolygonHover(hoverD => world
+        .polygonAltitude(d => d === hoverD ? 0.03 : 0.01)
+        .polygonCapColor(d => d === hoverD ? 'steelblue' : 'lightgray')
+      )*/
+      //.onPolygonClick(f => console.log('You clicked on:', f.properties.ADMIN));
 
-  // helpers
-  const regionButtons = Array.from(document.querySelectorAll('#overlay button[data-continent]'));
-  const countButtons  = Array.from(document.querySelectorAll('#count-buttons button'));
-  const startBtn      = document.getElementById('start-btn');
-  const skipBtn    = document.getElementById('skip-btn');
-  const newGameBtn    = document.getElementById('new-game-btn');
-  const overlay       = document.getElementById('overlay');
-  const menuContainer = document.getElementById('menu-container');
-  const quizOverlay   = document.getElementById('questions-overlay');
-  const countryNameEl = document.getElementById('country-name');
-  const statsDiv = document.getElementById('stats');
+      function finishGame() {
+        // Set progress bar to 100%
+        document.getElementById('progress-bar').style.width = '100%';
+        statsDiv.innerHTML = `
+          <p>Correct: ${correctSet.size} / ${quizCountries.length}</p>
+          <p>Errors: ${errorCount}</p>
+          <p>Skipped: ${skipCount}</p>
+        `;
+        statsDiv.style.display = 'block';
 
-  function getFilteredFeatures() {
-    const selected = regionButtons
-      .filter(b => b.classList.contains('selected'))
-      .map(b => b.getAttribute('data-continent'));
-
-    const hasWorld = selected.includes('World');
-    return hasWorld
-      ? allFeatures
-      : allFeatures.filter(f => selected.includes(f.properties.CONTINENT));
-  }
-
-  function updateGlobe() {
-    const filtered = getFilteredFeatures();
-
-    // enable/disable start button
-    if (filtered.length) {
-      startBtn.disabled = false;
-      startBtn.classList.add('enabled');
-    } else {
-      startBtn.disabled = true;
-      startBtn.classList.remove('enabled');
-    }
-
-    // show filtered on globe
-    world.polygonsData(filtered);
-  }
-
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  function startQuiz() {
-    const pool = getFilteredFeatures().slice();     // copy
-    // take either all or a random subset of maxCount
-    quizCountries = (pool.length <= maxCount || isNaN(maxCount)) // NaN when 'All'
-      ? pool
-      : shuffle(pool).slice(0, maxCount);
-    
-    currentQuestionIndex = 0;
-    correctSet.clear();
-    wrongSet.clear();
-    updateColors();
-
-    // reset progress bar
-    document.getElementById('progress-bar').style.width = '0%';
-
-    // hide menu overlay and start button
-    overlay.style.display    = 'none';
-    startBtn.style.display   = 'none';
-    newGameBtn.style.display = 'none';  // hide new game button during quiz
-    skipBtn.style.display = 'block';
-    skipBtn.disabled      = false;
-
-    // show question overlay
-    showQuestion();
-
-    // display first question
-    // TODO: Display a box/overlay with the name of the country to be guessed
-
-    // TODO: wire up your quiz logic (e.g. multiple-choice buttons, score tracking, next question)
-    // you can refer to quizCountries and currentQuestionIndex from here
-  }
-
-  function resetToStart() {
-    // Reset all game state
-    currentQuestionIndex = 0;
-    correctSet.clear();
-    wrongSet.clear();
-    quizCountries = [];
-    
-    // Hide question overlay and new game button
-    quizOverlay.style.display = 'none';
-    newGameBtn.style.display = 'none';
-    
-    // Show menu overlay and start button
-    overlay.style.display = 'block';
-    startBtn.style.display = 'block';
-    
-    // Reset globe colors and update display
-    updateColors();
-    updateGlobe();
-    
-    // Reset camera to default view
-    world.pointOfView({ lat: 0, lng: 0, altitude: 2 }, 1000);
-  }
-
-  function showQuestion() {
-    const feat = quizCountries[currentQuestionIndex];
-    const name = feat.properties.ADMIN;
-    countryNameEl.textContent = name;
-    quizOverlay.style.display = 'block';
-    skipBtn.style.display     = 'block';
-
-    // update progress bar: completed / total
-    const pct = (currentQuestionIndex / quizCountries.length) * 100;
-    document.getElementById('progress-bar').style.width = pct + '%';
-
-    // you can also fly the globe to that country’s centroid:
-    if (feat.properties && feat.properties.LONGITUDE && feat.properties.LATITUDE) {
-      world.pointOfView({ 
-        lat: feat.properties.LATITUDE, 
-        lng: feat.properties.LONGITUDE, 
-        altitude: 1.5 
-      }, 1000);
-    }
-  }
-
-  // 3) region buttons logic
-  regionButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const continent = btn.getAttribute('data-continent');
-      if (continent === 'World') {
-        const willSelectAll = !btn.classList.contains('selected');
-        regionButtons.forEach(b =>
-          willSelectAll ? b.classList.add('selected') : b.classList.remove('selected')
-        );
-      } else {
-        btn.classList.toggle('selected');
-        // sync World button
-        const nonWorld = regionButtons.filter(b => b.getAttribute('data-continent') !== 'World');
-        const allOn     = nonWorld.every(b => b.classList.contains('selected'));
-        const worldBtn  = regionButtons.find(b => b.getAttribute('data-continent') === 'World');
-        worldBtn.classList[allOn ? 'add' : 'remove']('selected');
+        countryNameEl.textContent = '🎉 Quiz complete!'; 
+        skipBtn.style.display = 'none';
+        newGameBtn.style.display = 'block';
       }
-      updateGlobe();
+
+      world.onPolygonClick(feat => {
+        console.log('You clicked on:', feat.properties.ADMIN)
+        const target = quizCountries[currentQuestionIndex];
+        // correct!
+        if (feat.properties.ADMIN === target.properties.ADMIN) {
+          correctSet.add(feat);
+          updateColors();
+
+          // prepare next question
+          currentQuestionIndex++;
+          wrongSet.clear();    // wipe out the red marks
+          updateColors();      // repaint the map
+
+          if (currentQuestionIndex < quizCountries.length) {
+            showQuestion();
+          } else {
+            finishGame()
+            /*
+            // Set progress bar to 100%
+            document.getElementById('progress-bar').style.width = '100%';
+      
+            countryNameEl.textContent = '🎉 Quiz complete!'; 
+            skipBtn.style.display = 'none';
+            newGameBtn.style.display = 'block';
+            // optionally disable clicks or reset
+            */
+          }
+          
+        // wrong
+        } else {
+          wrongSet.add(feat);
+          errorCount++;
+          updateColors();
+        }
+      });
+    
+    // Resize the globe when adjusting browser window size
+    window.addEventListener('resize', () => {
+      const width  = window.innerWidth;
+      const height = window.innerHeight;
+
+      // update the WebGL renderer’s drawing buffer
+      world.renderer().setSize(width, height);
+
+      // update the camera’s aspect ratio & projection matrix
+      world.camera().aspect = width / height;
+      world.camera().updateProjectionMatrix();
     });
-  });
 
-  // 4) count buttons logic
-  countButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      countButtons.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      maxCount = +btn.getAttribute('data-count');
-      console.log('Max countries set to', maxCount);
-    });
-  });
-
-  // 5) start quiz
-  startBtn.addEventListener('click', () => {
-    startQuiz();
-  });
-
-  // 6) new game button
-  newGameBtn.addEventListener('click', () => {
-    resetToStart();
-  });
-
-  skipBtn.addEventListener('click', () => {
-    // move on
-    skipCount++;
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizCountries.length) {
-      wrongSet.clear();       // clear any red marks 
-      updateColors();       // MULIG DISSE MÅ FLYTTES UT AV IF'en
-
-      // show next or finish
-      showQuestion();
-    } else {
-          finishGame()
+    function updateColors() {
+      world
+        .polygonCapColor(d => {
+          if (correctSet.has(d))       return 'green';
+          if (wrongSet.has(d))         return 'red';
+          if (d === hoveredFeature) return 'steelblue';
+          return 'lightgray';
+        })
+        .polygonSideColor(d => {
+          if (correctSet.has(d))     return 'green';
+          if (wrongSet.has(d))       return 'red';
+          if (d === hoveredFeature) return 'steelblue';
+          return 'rgba(0,100,0,0.15)';
+        });
     }
-  });
 
-</script>
-</body>
+    // 2) load GeoJSON
+    fetch('datasets/ne_110m_admin_0_countries.geojson')
+      .then(r => r.json())
+      .then(({ features }) => {
+        allFeatures = features;
+        //allFeatures = features.filter(d => d.properties.ISO_A2 !== 'AQ'); // Include to remove Antarctica
+      });
+
+    // helpers
+    const regionButtons = Array.from(document.querySelectorAll('#overlay button[data-continent]'));
+    const countButtons  = Array.from(document.querySelectorAll('#count-buttons button'));
+    const startBtn      = document.getElementById('start-btn');
+    const skipBtn    = document.getElementById('skip-btn');
+    const newGameBtn    = document.getElementById('new-game-btn');
+    const overlay       = document.getElementById('overlay');
+    const menuContainer = document.getElementById('menu-container');
+    const quizOverlay   = document.getElementById('questions-overlay');
+    const countryNameEl = document.getElementById('country-name');
+    const statsDiv = document.getElementById('stats');
+
+    function getFilteredFeatures() {
+      const selected = regionButtons
+        .filter(b => b.classList.contains('selected'))
+        .map(b => b.getAttribute('data-continent'));
+
+      const hasWorld = selected.includes('World');
+      return hasWorld
+        ? allFeatures
+        : allFeatures.filter(f => selected.includes(f.properties.CONTINENT));
+    }
+
+    function updateGlobe() {
+      const filtered = getFilteredFeatures();
+
+      // enable/disable start button
+      if (filtered.length) {
+        startBtn.disabled = false;
+        startBtn.classList.add('enabled');
+      } else {
+        startBtn.disabled = true;
+        startBtn.classList.remove('enabled');
+      }
+
+      // show filtered on globe
+      world.polygonsData(filtered);
+    }
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function startQuiz() {
+      const pool = getFilteredFeatures().slice();     // copy
+      // take either all or a random subset of maxCount
+      quizCountries = (pool.length <= maxCount || isNaN(maxCount)) // NaN when 'All'
+        ? pool
+        : shuffle(pool).slice(0, maxCount);
+      
+      currentQuestionIndex = 0;
+      correctSet.clear();
+      wrongSet.clear();
+      updateColors();
+
+      // reset progress bar
+      document.getElementById('progress-bar').style.width = '0%';
+
+      // hide menu overlay and start button
+      overlay.style.display    = 'none';
+      startBtn.style.display   = 'none';
+      newGameBtn.style.display = 'none';  // hide new game button during quiz
+      skipBtn.style.display = 'block';
+      skipBtn.disabled      = false;
+
+      // show question overlay
+      showQuestion();
+
+      // display first question
+      // TODO: Display a box/overlay with the name of the country to be guessed
+
+      // TODO: wire up your quiz logic (e.g. multiple-choice buttons, score tracking, next question)
+      // you can refer to quizCountries and currentQuestionIndex from here
+    }
+
+    function resetToStart() {
+      // Reset all game state
+      currentQuestionIndex = 0;
+      correctSet.clear();
+      wrongSet.clear();
+      quizCountries = [];
+      
+      // Hide question overlay and new game button
+      quizOverlay.style.display = 'none';
+      newGameBtn.style.display = 'none';
+      
+      // Show menu overlay and start button
+      overlay.style.display = 'block';
+      startBtn.style.display = 'block';
+      
+      // Reset globe colors and update display
+      updateColors();
+      updateGlobe();
+      
+      // Reset camera to default view
+      world.pointOfView({ lat: 0, lng: 0, altitude: 2 }, 1000);
+    }
+
+    function showQuestion() {
+      const feat = quizCountries[currentQuestionIndex];
+      const name = feat.properties.ADMIN;
+      countryNameEl.textContent = name;
+      quizOverlay.style.display = 'block';
+      skipBtn.style.display     = 'block';
+
+      // update progress bar: completed / total
+      const pct = (currentQuestionIndex / quizCountries.length) * 100;
+      document.getElementById('progress-bar').style.width = pct + '%';
+
+      // you can also fly the globe to that country’s centroid:
+      if (feat.properties && feat.properties.LONGITUDE && feat.properties.LATITUDE) {
+        world.pointOfView({ 
+          lat: feat.properties.LATITUDE, 
+          lng: feat.properties.LONGITUDE, 
+          altitude: 1.5 
+        }, 1000);
+      }
+    }
+
+    // 3) region buttons logic
+    regionButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const continent = btn.getAttribute('data-continent');
+        if (continent === 'World') {
+          const willSelectAll = !btn.classList.contains('selected');
+          regionButtons.forEach(b =>
+            willSelectAll ? b.classList.add('selected') : b.classList.remove('selected')
+          );
+        } else {
+          btn.classList.toggle('selected');
+          // sync World button
+          const nonWorld = regionButtons.filter(b => b.getAttribute('data-continent') !== 'World');
+          const allOn     = nonWorld.every(b => b.classList.contains('selected'));
+          const worldBtn  = regionButtons.find(b => b.getAttribute('data-continent') === 'World');
+          worldBtn.classList[allOn ? 'add' : 'remove']('selected');
+        }
+        updateGlobe();
+      });
+    });
+
+    // 4) count buttons logic
+    countButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        countButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        maxCount = +btn.getAttribute('data-count');
+        console.log('Max countries set to', maxCount);
+      });
+    });
+
+    // 5) start quiz
+    startBtn.addEventListener('click', () => {
+      startQuiz();
+    });
+
+    // 6) new game button
+    newGameBtn.addEventListener('click', () => {
+      resetToStart();
+    });
+
+    skipBtn.addEventListener('click', () => {
+      // move on
+      skipCount++;
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizCountries.length) {
+        wrongSet.clear();       // clear any red marks 
+        updateColors();       // MULIG DISSE MÅ FLYTTES UT AV IF'en
+
+        // show next or finish
+        showQuestion();
+      } else {
+            finishGame()
+      }
+    });
+
+  </script>
+  </body>
+</html>
