@@ -261,6 +261,11 @@
     let errorCount = 0;
     let skipCount  = 0;
 
+    // Preload sounds
+    const soundCorrect   = new Audio('sounds/correct-answer.mp3');
+    const soundIncorrect = new Audio('sounds/incorrect-answer.mp3');
+    const soundSkip = new Audio('sounds/skip-answer.mp3');
+
     // 1) create globe with NO polygons initially
     const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
@@ -299,6 +304,7 @@
         const target = quizCountries[currentQuestionIndex];
         // correct!
         if (feat.properties.ADMIN === target.properties.ADMIN) {
+          soundCorrect.play();
           correctSet.add(feat);
           updateColors();
 
@@ -324,6 +330,7 @@
           
         // wrong
         } else {
+          soundIncorrect.play();
           wrongSet.add(feat);
           errorCount++;
           updateColors();
@@ -453,6 +460,9 @@
       // Hide question overlay and new game button
       quizOverlay.style.display = 'none';
       newGameBtn.style.display = 'none';
+
+      // Reactivate hover labels 
+      world.polygonLabel(({ properties: d }) => `<b>${d.ADMIN}</b>`)
       
       // Show menu overlay and start button
       overlay.style.display = 'block';
@@ -529,7 +539,7 @@
     });
 
     skipBtn.addEventListener('click', () => {
-      // move on
+      soundSkip.play();
       skipCount++;
       currentQuestionIndex++;
       if (currentQuestionIndex < quizCountries.length) {
