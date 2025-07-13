@@ -270,18 +270,12 @@
       .polygonSideColor(() => 'rgba(0, 100, 0, 0.15)')
       .polygonStrokeColor(() => 'black')
       .polygonsTransitionDuration(300)
+      .polygonLabel(({ properties: d }) => `<b>${d.ADMIN}</b>`)
       .onPolygonHover(f => {
         hoveredFeature = f;
         world.polygonAltitude(d => d === hoveredFeature ? 0.03 : 0.01); // Bump the altitude
         updateColors();
       });
-
-      /*
-      .onPolygonHover(hoverD => world
-        .polygonAltitude(d => d === hoverD ? 0.03 : 0.01)
-        .polygonCapColor(d => d === hoverD ? 'steelblue' : 'lightgray')
-      )*/
-      //.onPolygonClick(f => console.log('You clicked on:', f.properties.ADMIN));
 
       function finishGame() {
         // Set progress bar to 100%
@@ -430,6 +424,9 @@
       wrongSet.clear();
       updateColors();
 
+      // disable the hover-labels
+      world.polygonLabel(null);
+
       // reset progress bar
       document.getElementById('progress-bar').style.width = '0%';
 
@@ -442,12 +439,6 @@
 
       // show question overlay
       showQuestion();
-
-      // display first question
-      // TODO: Display a box/overlay with the name of the country to be guessed
-
-      // TODO: wire up your quiz logic (e.g. multiple-choice buttons, score tracking, next question)
-      // you can refer to quizCountries and currentQuestionIndex from here
     }
 
     function resetToStart() {
