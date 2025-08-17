@@ -1,26 +1,97 @@
+/* app/globals.css */
 @import "tailwindcss";
+/* v4 one-liner replaces @tailwind base/components/utilities */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root,
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #000;
+}
+
+/* kills the white border */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Use plain CSS for colors with opacity (slash syntax can't be @apply'ed) */
+.glass {
+  background-color: rgb(255 255 255 / 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.4);
+  /* Tailwind utilities you CAN safely apply: */
+  @apply shadow-xl rounded-2xl;
+}
+
+.panel {
+  @apply p-4 md:p-5 text-sm md:text-base;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition;
+  /* If active:scale-95 in @apply complains in your v4 build, remove it and add: */
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  @apply text-white;
+  background-color: rgb(22 163 74);
+}
+
+/* green-600 */
+.btn-primary:hover {
+  background-color: rgb(21 128 61);
+}
+
+/* green-700 */
+
+.btn-secondary {
+  @apply text-white;
+  background-color: rgb(14 23 62);
+}
+
+/* slate-900 */
+.btn-secondary:hover {
+  background-color: rgb(0 0 0);
+}
+
+.btn-warning {
+  @apply text-white;
+  background-color: rgb(245 158 11);
+}
+
+/* amber-500 */
+.btn-warning:hover {
+  background-color: rgb(217 119 6);
+}
+
+/* amber-600 */
+
+/* ghost uses raw bg with opacity instead of @apply-ing slash utilities */
+.btn-ghost {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.btn-ghost:hover {
+  background-color: rgb(255 255 255 / 0.7);
+}
+
+/* Headings/labels */
+.h2 {
+  @apply text-lg font-semibold tracking-tight;
+}
+
+.label {
+  @apply text-xs uppercase tracking-wide text-slate-600;
 }
