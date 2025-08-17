@@ -1,3 +1,4 @@
+// utils.ts
 import type { CountryFeature } from './types'
 import { geoCentroid } from 'd3-geo'
 
@@ -20,5 +21,7 @@ export const centroid = (f: CountryFeature) => {
 }
 
 
-export const flagUrl = (iso2?: string) =>
-    iso2 ? `https://flagcdn.com/w320/${iso2.toLowerCase()}.png` : undefined
+export const flagUrl = (
+    iso2?: string,
+    size: '24x18' | '48x36' | '96x72' | '160x120' | '256x192' = '256x192'
+) => (iso2 ? `https://flagcdn.com/${size}/${iso2.toLowerCase()}.png` : undefined)

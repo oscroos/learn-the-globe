@@ -93,8 +93,11 @@ export default function GlobeScene() {
                 polygonsTransitionDuration={300}
                 polygonLabel={(d: CountryFeature) => (status === 'running' ? '' : `<b>${d.properties.ADMIN}</b>`)}
                 onPolygonHover={(f: CountryFeature | null) => setHovered(f ? featureId(f) : undefined)}
-                onPolygonClick={(f: CountryFeature) => useGame.getState().click(featureId(f))}
-            />
+                onPolygonClick={(f: CountryFeature) => {
+                    console.log('clicked:', f.properties.ADMIN); // ← shows in browser console
+                    const id = featureId(f);
+                    useGame.getState().click(id);
+                }} />
         </div>
     )
 }

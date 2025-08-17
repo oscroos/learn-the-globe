@@ -1,3 +1,4 @@
+// RightPanel.tsx
 'use client'
 import { auth, db, googleProvider, appleProvider } from '@/lib/firebase'
 import { onAuthStateChanged, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'

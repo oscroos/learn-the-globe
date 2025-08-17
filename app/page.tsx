@@ -1,6 +1,7 @@
 import GlobeScene from '@/components/GlobeScene'
 import LeftPanel from '@/components/LeftPanel'
-import RightPanel from '@/components/RightPanel'
+import RightDock from '@/components/RightDock'
+import RightPanel from '@/components/RightDock'
 
 
 export default function Page() {
@@ -8,7 +9,7 @@ export default function Page() {
     <main className="h-dvh w-dvw">
       <GlobeScene />
       <LeftPanel />
-      <RightPanel />
+      <RightDock />
     </main>
   )
 }

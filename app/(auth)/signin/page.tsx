@@ -1,3 +1,4 @@
+// (auth)/signin/page.tsx
 export default function SignInPage() {
     return (
         <div className="min-h-screen grid place-items-center">
