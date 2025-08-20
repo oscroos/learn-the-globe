@@ -2,11 +2,12 @@
 'use client'
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import type { CountryFeature, Mode } from '../types'
+import type { CountryFeature } from '../types'
 import { featureId, shuffle } from '../utils'
+import type { Mode } from '../constants'
 
 
-interface GameState {
+export interface GameState {
     mode: Mode
     regions: string[]
     maxCount: number | 'All'
@@ -26,7 +27,7 @@ interface GameState {
 
     setMode: (m: Mode) => void
     toggleRegion: (r: string) => void
-    setRegions: (rs: string[]) => void
+    setRegions: (rs: readonly string[]) => void
     setMaxCount: (n: number | 'All') => void
     setCountries: (features: CountryFeature[]) => void
     setHovered: (id?: string) => void
@@ -65,10 +66,11 @@ export const useGame = create<GameState>()(
                 return { regions, filtered }
             }),
             setRegions: (rs) => set(s => {
-                const filtered = rs.length
-                    ? s.all.filter(f => rs.includes(f.properties.CONTINENT ?? ''))
+                const regions = Array.from(rs) // make a mutable copy
+                const filtered = regions.length
+                    ? s.all.filter(f => regions.includes(f.properties.CONTINENT ?? ''))
                     : []
-                return { regions: rs, filtered }
+                return { regions, filtered }
             }),
             setMaxCount: (n) => set({ maxCount: n }),
 
@@ -106,7 +108,9 @@ export const useGame = create<GameState>()(
 
 
             click: (id) => set(s => {
-                if (s.status !== 'running') return {}
+                if (s.status !== 'running') return {} // Only allow clicks when playing
+                if (s.correct.has(id)) return {} // Ignore clicks on countries already answered correctly (guarded in GlobeScene)
+
                 const target = s.quiz[s.index]
                 const tid = featureId(target)
                 if (id === tid) {

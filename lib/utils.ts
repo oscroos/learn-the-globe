@@ -1,5 +1,6 @@
-// utils.ts
+// lib/utils.ts
 import type { CountryFeature } from './types'
+import type { Feature, Polygon, MultiPolygon } from 'geojson'
 import { geoCentroid } from 'd3-geo'
 
 export const shuffle = <T,>(arr: T[]) => {
@@ -16,7 +17,8 @@ export const featureId = (f: CountryFeature) => f.properties.ADM0_A3 // Use ADMI
 
 
 export const centroid = (f: CountryFeature) => {
-    const c = geoCentroid(f as any)
+    const g = f as unknown as Feature<Polygon | MultiPolygon>
+    const c = geoCentroid(g)
     return { lat: c[1], lng: c[0] }
 }
 

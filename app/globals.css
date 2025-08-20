@@ -36,7 +36,7 @@ body {
 
 /* Buttons */
 .btn {
-  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition;
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium cursor-pointer transition;
   /* If active:scale-95 in @apply complains in your v4 build, remove it and add: */
 }
 
@@ -69,6 +69,11 @@ body {
 .btn-warning {
   @apply text-white;
   background-color: rgb(245 158 11);
+}
+
+/* Danger button */
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
 }
 
 /* amber-500 */

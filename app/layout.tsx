@@ -1,47 +1,52 @@
+// layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from '@/components/Providers'
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Learn The Globe',
+  metadataBase: new URL('https://learntheglobe.com'),
+  title: {
+    default: 'Learn the Globe',
+    template: '%s · Learn the Globe', // used by pages below
+  },
   description: 'Practice geography by clicking countries on a 3D globe',
-};
+
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Learn the Globe',
+    description: 'Geography quizzes: countries, capitals, and flags.',
+    url: 'https://learntheglobe.com',
+    siteName: 'Learn the Globe',
+    images: ['/og-image.jpg'], // 1200x630
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Learn the Globe',
+    description: 'Geography quizzes: countries, capitals, and flags.',
+    images: ['/og-image.jpg'],
+  },
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
         <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
-};
 
-/*
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        {/* JSON-LD can be in head or body; Google reads both */}
+        <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Learn the Globe',
+            url: 'https://learntheglobe.com',
+            logo: 'https://learntheglobe.com/icon.png', // square PNG/JPG (not .ico)
+          })}
+        </Script>
       </body>
     </html>
-  );
+  )
 }
-*/
+
+
