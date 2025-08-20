@@ -5,6 +5,7 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 import type { CountryFeature } from '../types'
 import { featureId, shuffle } from '../utils'
 import type { Mode } from '../constants'
+import { gaEvent } from '../analytics'
 
 
 export interface GameState {
@@ -93,6 +94,9 @@ export const useGame = create<GameState>()(
                 const take = s.maxCount === 'All'
                     ? shuffled.length
                     : Math.min(shuffled.length, Number(s.maxCount));
+
+                // Log event in GA4
+                gaEvent('quiz_start', { mode: s.mode, regions: s.regions, count: take })
 
                 return {
                     quiz: shuffled.slice(0, take),

@@ -26,6 +26,8 @@ import useUserProfile from '@/lib/hooks/useUserProfile'
 import { ensureUserDoc, setHomeCountryOnce } from '@/lib/user'
 import type { UserProfile } from '@/lib/types'
 import { TOTAL_ACHIEVEMENTS } from '@/lib/constants'
+import Link from 'next/link'
+
 
 isoCountries.registerLocale(enLocale as any)
 
@@ -469,6 +471,18 @@ function EmailAuth({
                         required
                     />
                 )}
+
+                <p className="text-[11px] text-slate-500 mt-1">
+                    By having an account, you agree to our{' '}
+                    <Link
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                    >
+                        Privacy Policy
+                    </Link>.
+                </p>
             </div>
 
             {error && <div className="text-sm text-red-600">{error}</div>}

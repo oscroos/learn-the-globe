@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Providers from '@/components/Providers'
 import Script from 'next/script';
+import ConsentBanner from '@/components/ConsentBanner'
+import ThirdPartyScripts from '@/components/ThirdPartyScripts'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://learntheglobe.com'),
@@ -26,12 +28,17 @@ export const metadata: Metadata = {
     description: 'Geography quizzes: countries, capitals, and flags.',
     images: ['/og-image.jpg'],
   },
+  other: { 'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT },
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <ConsentBanner />
+        <ThirdPartyScripts />
+
         <Providers>{children}</Providers>
 
         {/* JSON-LD can be in head or body; Google reads both */}

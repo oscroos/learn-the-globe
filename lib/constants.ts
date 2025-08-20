@@ -29,3 +29,7 @@ export function regionsFor(geo: Geography): readonly Continent[] {
 }
 
 export const TOTAL_ACHIEVEMENTS = MODES.length * GEOGRAPHIES.length // 27
+
+// AdSense and GA4
+export const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+export const ADS_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT

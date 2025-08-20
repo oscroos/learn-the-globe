@@ -7,6 +7,7 @@ import { useGame } from '@/lib/store/gameStore'
 import useUserProfile from '@/lib/hooks/useUserProfile'
 import { GEOGRAPHIES, MODES, regionsFor, type Mode } from '@/lib/constants'
 import type { AchievementKey } from '@/lib/types'
+import { gaEvent } from '@/lib/analytics'
 
 export default function TrophyDock() {
     const [isAuthed, setIsAuthed] = useState(!!auth.currentUser)
@@ -29,6 +30,9 @@ export default function TrophyDock() {
         useGame.getState().setCountries(all)
         g.start()
         document.dispatchEvent(new Event('ltg:close-docks'))
+        
+        // Log to GA4
+        gaEvent('quiz_start_from_trophy_panel', { mode: mode, regions: geo })
     }
 
     function goToLogin() {
