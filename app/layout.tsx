@@ -28,8 +28,7 @@ export const metadata: Metadata = {
     description: 'Geography quizzes: countries, capitals, and flags.',
     images: ['/og-image.jpg'],
   },
-  other: { 'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT },
-
+  other: { 'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? '' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
