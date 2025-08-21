@@ -1,3 +1,4 @@
+// components/ConsentBanner.tsx
 'use client'
 import { useEffect, useState } from 'react'
 import { getConsent, setConsent, type Consent } from '@/lib/consent'
@@ -16,7 +17,7 @@ export default function ConsentBanner() {
       ad_user_data: c.ads ? 'granted' : 'denied',
       ad_personalization: c.ads ? 'granted' : 'denied',
       ad_storage: c.ads ? 'granted' : 'denied',
-      analytics_storage: c.analytics ? 'granted' : 'denied',
+      // analytics_storage: c.analytics ? 'granted' : 'denied', // Analytics granted by default (hence commented out)
     })
     setShown(false)
   }

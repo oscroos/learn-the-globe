@@ -1,3 +1,4 @@
+// lib/analytics.ts
 import { GA_ID } from '@/lib/constants'
 
 export function gaEvent(name: string, params: Record<string, any> = {}) {
